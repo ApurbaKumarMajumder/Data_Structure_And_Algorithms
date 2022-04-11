@@ -5,6 +5,7 @@ using namespace std;
 int main(){
 
     stack<string> s;
+    // FILO -> First In Last Out
 
     s.push("Majumder");
     s.push("Kumar");

@@ -23,5 +23,12 @@ int main(){
     }
     cout<<endl;
 
-    cout<<"5 is present or not -> "<<s.count(5)<<endl;
+    cout<<"50 is present or not -> "<<s.count(50)<<endl;
+
+    set<int>::iterator itr = s.find(50);
+
+    for(auto it = itr; it != s.end(); it++){
+        cout<<*it<<' ';
+    }
+    cout<<endl;
 }

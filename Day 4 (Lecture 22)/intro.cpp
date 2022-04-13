@@ -1,6 +1,20 @@
 #include<iostream>
 using namespace std;
 
+bool checkPalindrome(char a[], int n){
+    int s = 0;
+    int e = n - 1;
+
+    while(s <= e){
+        if(a[s] != a[e]){
+            return false;
+        }
+        s++;
+        e--;
+    }
+    return true;
+}
+
 void reverse(char name[], int n){
     int start = 0, end = n - 1;
     while(start <= end){
@@ -34,5 +48,9 @@ int main(){
     cout<<"Your name is "<<endl;
     cout<<name<<endl;
 
+    cout<< "Palindrome or Not: "<<checkPalindrome(name, getLength(name))<<endl;
+    // prints 1 or 0 for true and false
+
+    
     return 0;
 }

@@ -39,17 +39,34 @@ class Hero {
 
 int main(){
 
+    
+
     // created a object
-    Hero Apurba;
-    cout<<"Apurba health is "<<Apurba.getHealth()<<endl;
+    // Hero Apurba;
+    // cout<<"Apurba health is "<<Apurba.getHealth()<<endl;
 
-    // Apurba.health = 100;
-    // use setter as it's private
-    Apurba.setHealth(100);
-    Apurba.level = 'A';
+    //static allocation
+    // Hero a;
+    // a.setHealth(80);
+    // a.setLevel('B');
+    // cout<<"level is "<<a.level<<endl;
+    // cout<<"health is "<<a.getHealth()<<endl;
 
-    cout<<"health is: "<<Apurba.getHealth() <<endl;
-    cout<<"level is: "<<Apurba.level <<endl;
+    // //dynamically
+    // Hero *b = new Hero;
+    // cout<<"level is "<<(*b).level<<endl;
+    // cout<<"health is "<<(*b).getHealth()<<endl;
 
-    // cout<<"size : "<<sizeof(Apurba)<<endl;
+    // cout<<"level is "<<b->level<<endl;
+    // cout<<"health is "<<b->getHealth()<<endl;
+
+    // // Apurba.health = 100;
+    // // use setter as it's private
+    // Apurba.setHealth(100);
+    // Apurba.level = 'A';
+
+    // cout<<"health is: "<<Apurba.getHealth() <<endl;
+    // cout<<"level is: "<<Apurba.level <<endl;
+
+    // // cout<<"size : "<<sizeof(Apurba)<<endl;
 }

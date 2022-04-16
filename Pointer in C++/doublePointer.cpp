@@ -53,23 +53,5 @@ int main(){
    cout<<"after "<<ptr <<endl;
    cout<<"after "<<ptr2<<endl;
 
-//    cout<<endl;
-//    cout<<"before "<<i<<endl;
-//    cout<<"before "<<ptr <<endl;
-//    cout<<"before "<<ptr2<<endl;
-//    update(ptr2);
-//    cout<<"after "<< i<<endl;
-//    cout<<"after "<<ptr <<endl;
-//    cout<<"after "<<ptr2<<endl;
-
-//    cout<<endl;
-//    cout<<"before "<<i<<endl;
-//    cout<<"before "<<ptr <<endl;
-//    cout<<"before "<<ptr2<<endl;
-//    update(ptr2);
-//    cout<<"after "<< i<<endl;
-//    cout<<"after "<<ptr <<endl;
-//    cout<<"after "<<ptr2<<endl;
-
     return 0;
 }

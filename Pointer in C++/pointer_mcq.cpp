@@ -80,12 +80,19 @@ int main(){
     // update(&i);
     // cout<<i<<endl;
 
-    int first = 110;
+    // int first = 110;
+    // int *p = &first;
+    // int **q = &p;
+    // int second = (**q)++ + 9;
+    // cout<<first<< " "<<second <<endl;
+
+    int first = 100;
     int *p = &first;
     int **q = &p;
-    int second = (**q)++ + 9;
-    cout<<first<< " "<<second <<endl;
-
+    int second = ++(**q);
+    int *r = *q;
+    ++(*r);
+    cout<<first<<" "<<second <<endl;
 
     return 0;
 }

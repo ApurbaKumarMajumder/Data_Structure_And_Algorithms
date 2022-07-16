@@ -13,6 +13,16 @@ class Node {
         this->prev = NULL;
         this->next = NULL;
     }
+
+    // Destructor
+    ~Node() {
+        int val = this->data;
+        if(next != NULL) {
+            delete next;
+            next = NULL;
+        }
+        cout<<"Momory free for the mode with val "<<val<<"\n";
+    }
 };
 
 void printLL(Node* &head) {
@@ -103,6 +113,39 @@ void insertAtPosition(Node* &head, Node* &tail, int position, int val, int size)
     nodeToInsert->prev = temp;
 }
 
+void deleteNode (Node* &head, int position, int size) {
+    
+    // deleting first or start node
+    if(position == 1) {
+        Node* temp = head;
+        temp->next->prev = NULL;
+        head = temp->next;
+        temp->next = NULL;
+        delete temp;
+    } else if (position < 0 || position > size) {
+        cout<<"Invalid argument"<<"\n";
+        return;
+    } else {
+        // deleting and middle noe or last node
+        Node* curr = head;
+        Node* prev = NULL;
+
+        int count = 1;
+        while (count < position) {
+            prev = curr;
+            curr = curr -> next;
+            count++;
+        }
+
+        curr->prev = NULL;
+        prev->next = curr->next;
+        curr->next = NULL;
+
+        delete curr;
+    }
+
+}
+
 int main() {
     // Node* head = node1;
     // Node* tail = node1;
@@ -139,6 +182,10 @@ int main() {
     cout<<"Size of LL: "<<length(head)<<"\n";
 
     insertAtPosition(head, tail, 7, 102, length(head));
+    printLL(head);
+    cout<<"Size of LL: "<<length(head)<<"\n";
+
+    deleteNode(head, 8, length(head));
     printLL(head);
     cout<<"Size of LL: "<<length(head)<<"\n";
     return 0;

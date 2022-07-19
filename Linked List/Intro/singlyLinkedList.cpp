@@ -41,6 +41,9 @@ void InsertAtHead(Node* &head, int data) {
 
 void printLL(Node* & head) {
     // pointing the current element
+    if(head == NULL) {
+        cout<<"List is empty"<<"\n";
+    }
     Node* temp = head;
 
     while (temp != NULL) {
@@ -103,6 +106,24 @@ void deleteNode(int position, Node* &head){
     }
 }
 
+bool isCircularList(Node* &head) {
+    // empty list
+    if (head == NULL) {
+        return NULL;
+    }
+
+    Node* temp = head -> next;
+    while (temp != NULL && temp != head) {
+        temp = temp -> next;
+    }
+
+    if(temp == head) {
+        return true;
+    }
+
+    return false;
+}
+
 int main() {
 
     // create a new Node
@@ -139,5 +160,11 @@ int main() {
     deleteNode(3, head);
     printLL(head);
     cout<<" "<<endl;
+
+    if (isCircularList(head)) {
+        cout<< "the given Linked List is circular in nature" << "\n";
+    } else {
+        cout<<"OOPs! "<<"\n"<<"Not circular bro. "<<"\n";
+    }
     return 0;
 }

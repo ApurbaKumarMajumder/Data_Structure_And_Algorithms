@@ -1,4 +1,5 @@
 #include<iostream>
+#include<map>
 using namespace std;
 
 class Node {
@@ -124,6 +125,56 @@ bool isCircularList(Node* &head) {
     return false;
 }
 
+bool detectLoop(Node* head) {
+    if (head == NULL) {
+        return false;
+    }
+
+    map<Node*, bool> visited;
+
+    Node* temp = head;
+
+    while (temp != NULL) {
+        
+        // cycle is present
+        if (visited[temp] == true) {
+            cout<<"Present on element "<< temp->data<<"\n";
+            return 1;
+        }
+        
+        visited[temp] = true;
+        temp = temp -> next;
+    }
+
+    return false;
+}
+
+Node* floydDetectLoop(Node* head) {
+    if (head == NULL) {
+        return NULL;
+    }
+    
+    Node* slow = head;
+    Node* fast = head;
+
+    while (slow != NULL && fast != NULL) {
+        
+        fast = fast -> next;
+        if(fast != NULL) {
+            fast = fast -> next;
+        }
+
+        slow = slow -> next;
+
+        if (slow == fast) {
+            cout<< "present at "<<slow -> data<<"\n";
+            return slow;
+        }
+    }
+    
+    return NULL;
+}
+
 int main() {
 
     // create a new Node
@@ -157,14 +208,22 @@ int main() {
     printLL(head);
     cout<<" "<<endl;
 
-    deleteNode(3, head);
-    printLL(head);
-    cout<<" "<<endl;
+    // deleteNode(3, head);
+    // printLL(head);
+    // cout<<" "<<endl;
 
-    if (isCircularList(head)) {
-        cout<< "the given Linked List is circular in nature" << "\n";
+    // if (isCircularList(head)) {
+    //     cout<< "the given Linked List is circular in nature" << "\n";
+    // } else {
+    //     cout<<"OOPs! "<<"\n"<<"Not circular bro. "<<"\n";
+    // }
+
+    tail -> next = head -> next;
+
+    if (floydDetectLoop(head) != NULL) {
+        cout<<"Cycle is present"<<"\n";
     } else {
-        cout<<"OOPs! "<<"\n"<<"Not circular bro. "<<"\n";
+        cout<<"no cycle" << "\n";
     }
     return 0;
 }

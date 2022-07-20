@@ -1,3 +1,7 @@
+// Detect cu=ycle in Linked List
+// remove cycle from LL
+// beginning / start node of Loop in Linked List
+
 bool detectLoop(Node* head) {
     if (head == NULL) {
         return false;
@@ -46,4 +50,37 @@ Node* floydDetectLoop(Node* head) {
     }
     
     return NULL;
+}
+
+Node* getStartingNode(Node* head) {
+
+    if(head == NULL) {
+        return NULL;
+    }
+
+    Node* intersection = floydDetectLoop(head);
+    Node* slow = head;
+
+    while (slow != intersection) {
+        slow = slow -> next;
+        intersection = intersection -> next;
+    }
+    
+    return slow;
+}
+
+void removeLoop(Node* head) {
+
+    if(head == NULL) {
+        return;
+    }
+
+    Node* startOfLoop = getStartingNode(head);
+    Node* temp = startOfLoop;
+
+    while (temp -> next != startOfLoop) {
+        temp = temp -> next;
+    }
+
+    temp -> next = NULL;
 }

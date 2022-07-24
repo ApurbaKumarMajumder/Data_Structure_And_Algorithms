@@ -1,5 +1,5 @@
 #include <iostream>
-#include<stack>
+#include <stack>
 using namespace std;
 
 class Stack
@@ -69,37 +69,71 @@ public:
         }
     }
 };
+stack<int> pushAtBottom(stack<int> &myStack, int x)
+{
+    // Write your code here.
+    if (myStack.empty())
+    {
+        myStack.push(x);
+        return myStack;
+    }
+
+    int val = myStack.top();
+    myStack.pop();
+
+    stack<int> result = pushAtBottom(myStack, x);
+
+    myStack.push(val);
+    return myStack;
+}
 
 int main()
 {
 
-    Stack st(5);
+    // Stack st (5);
 
-    st.push(22);
-    st.push(43);
-    st.push(44);
-    st.push(36);
-    st.push(26);
-    st.push(16);
+    // st.push(22);
+    // st.push(43);
+    // st.push(44);
+    // st.push(36);
+    // st.push(26);
+    // st.push(16);
 
-    cout << st.peek() << endl;
+    // cout << st.peek() << endl;
 
-    st.pop();
+    // st.pop();
 
-    cout << st.peek() << endl;
+    // cout << st.peek() << endl;
 
-    st.pop();
+    // st.pop();
 
-    cout << st.peek() << endl;
+    // cout << st.peek() << endl;
 
-    st.pop();
+    // st.pop();
 
-    cout<<st.peek()<<endl;
+    // cout<<st.peek()<<endl;
 
-    if (st.isEmpty()) {
-        cout<< "Stack is empty mere dost"<< endl;
-    } else {
-        cout<< "Stack is not empty mere dost"<<endl;
+    // if (st.isEmpty()) {
+    //     cout<< "Stack is empty mere dost"<< endl;
+    // } else {
+    //     cout<< "Stack is not empty mere dost"<<endl;
+    // }
+
+    stack<int> stack;
+
+    stack.push(21);
+    stack.push(22);
+    stack.push(24);
+    stack.push(25);
+
+    int val = stack.top();
+    cout << val << "\n";
+
+    pushAtBottom(stack, 5);
+
+    while(!stack.empty()) {
+        cout<<stack.top()<<endl;
+        stack.pop();
     }
 
     // // creation of stack

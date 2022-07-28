@@ -108,9 +108,36 @@ int main() {
     cout << p << endl;
     cout << *p << endl;
     cout << &p << endl;
+    
+    int arr[10];
+
+    // Error (address cannot be reassigned)
+    // arr = arr + 1;
+
+    int *ptr = &arr[0];
+    cout << ptr << endl;
+    ptr = ptr + 1; // ptr++;
+    cout << ptr << endl;
     */
-    
-    
+
+    // character array
+
+    int arr[5] = {1, 2, 3 ,4, 5};
+    char ch[6] = "abcde";
+
+    cout << arr << endl;
+    // attention here
+    cout << ch << endl;
+
+    char *c = &ch[0];
+    // prints entire string
+    cout << c << endl;
+
+    char temp = 'z';
+    char *p = &temp;
+
+    // prints untill it finds a null character
+    cout << p << endl;
 
     return 0;
 }

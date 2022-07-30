@@ -15,12 +15,12 @@ void update(int** ptr) {
 }
 
 int main() {
-
+    
+    /*
     int i = 5;
     int* ptr = &i;
     int** ptr2 = &ptr;
 
-    /*
     cout << endl << endl << " Sab sahi chal rha h " << endl << endl;
 
     // value
@@ -35,7 +35,6 @@ int main() {
 
     cout << &ptr << endl;
     cout << ptr2 << endl;
-    */
 
     cout << endl << endl;
     cout << "before " << i << endl;
@@ -45,10 +44,28 @@ int main() {
     cout << "after " << i << endl;
     cout << "after " << ptr << endl;
     cout << "after " << ptr2 << endl;
-
+    */
     
     // MCQ for pointers
+    
+    /*
+    // 1. 
+    int first = 8;
+    int second = 18;
+    int *ptr = &second;
+    *ptr = 9;
+    cout << first << " " << second << endl;
+    */
+
+    // 2.
+    int first = 6;
+    int *a = &first;
+    int *b = a;
+    (*b)++;
+    cout << first << endl;
 
 
+
+    
     return 0;
 }

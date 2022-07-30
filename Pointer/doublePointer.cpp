@@ -55,7 +55,6 @@ int main() {
     int *ptr = &second;
     *ptr = 9;
     cout << first << " " << second << endl;
-    */
 
     // 2.
     int first = 6;
@@ -63,9 +62,23 @@ int main() {
     int *b = a;
     (*b)++;
     cout << first << endl;
-
-
-
     
+    // 3.
+    int first = 8;
+    int *a = &first;
+    cout << (*a)++ << endl;
+    cout << first << endl;
+    */
+
+    // 4.
+    int *p = 0;
+    int first = 110;
+    // *p = first; // will not working
+    // p = &first;
+    cout << *p << endl;
+
+    // 5.
+    
+
     return 0;
 }

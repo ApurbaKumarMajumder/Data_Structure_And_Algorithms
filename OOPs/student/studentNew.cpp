@@ -44,6 +44,7 @@ int main() {
     // s2.display();
 */
 
+/*
     Student s1(10, 100); // parameterised constructor (it's user defined)
     cout << "S1 : ";
     s1.display();
@@ -63,7 +64,21 @@ int main() {
     Student s4(*s3);
     Student *s5 = new Student(*s3);
     Student *s6 = new Student(s1);
-    
+*/
+
+    Student s1(10, 100);
+    Student s2(20, 200);
+
+    Student *s3 = new Student(30, 300);
+
+    s2 = s1; // copy assignment operator
+    *s3 = s1;
+    s2 = *s3;
+
+    // in static object creation default destructor will be called at the end of program
+    // but for dynamic object creation we have to call the destructor
+
+    delete s3; // dynamic object
 
     return 0;
 }

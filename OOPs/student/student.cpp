@@ -14,7 +14,6 @@ using namespace std;
         -> No input arguments.
     -> it is also called oncee in lifetime and it is called when the scope of the object is finished.
     -> there can be many constructor but destructor is only one.
-    -> 
 */
 
 class Student
@@ -58,6 +57,10 @@ class Student
             }
             age = a;
         }
+
+    ~Student() {    // our destructor will be called
+        cout << "Destructor called " << endl;
+    }
 };
 
 // int main() {

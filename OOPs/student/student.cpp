@@ -4,12 +4,22 @@ using namespace std;
 class Student
 {
     public:
-        int rollNumber;
-        
-    private:
+
         int age;
 
-    public:
+        // default constructor
+        Student() {
+            cout << "Constructor 1 called " << endl;
+        }
+
+        // parameterized constructor
+        Student (int r) {
+            cout << "Constructor 2 called " << endl;
+            rollNumber = r;
+        }
+
+        int rollNumber;
+        
         void display() {
             cout << age << " " << rollNumber << endl;
         }
@@ -18,9 +28,11 @@ class Student
             return age;
         }
 
-        int setAge(int a) {
+        void setAge(int a) {
+            if (a < 0) {
+                return;
+            }
             age = a;
-            return age;
         }
 };
 

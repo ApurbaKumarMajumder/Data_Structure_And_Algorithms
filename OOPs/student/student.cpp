@@ -13,15 +13,23 @@ class Student
         }
 
         // parameterized constructor
-        Student (int r) {
+        Student (int rollNumber) {
             cout << "Constructor 2 called " << endl;
+            this -> rollNumber = rollNumber;
+        }
+
+        Student (int a, int r) {
+            cout << "this " << this << endl;
+            cout << "Constructor 3 called " << endl;
+            age = a; // this -> age = a (optional)
             rollNumber = r;
         }
 
         int rollNumber;
         
         void display() {
-            cout << age << " " << rollNumber << endl;
+            cout << "age : " << age << endl;
+            cout << "rollNumber : " << rollNumber << endl;
         }
 
         int getAge() {

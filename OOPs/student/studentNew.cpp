@@ -4,6 +4,7 @@ using namespace std;
 
 int main() {
 
+/*
     // Constructor
         // Default Constructor
             // 1. Same name as class name
@@ -29,4 +30,17 @@ int main() {
 
     Student *s5 = new Student(20);
     s5 -> display();
+
+    Student s6(10, 100);
+    s6.display();
+
+*/
+
+    Student s1(10, 1000);
+    cout << "Address of s1 " << &s1 << endl;
+
+    Student s2(100);
+    s2.display();
+
+    return 0;
 }

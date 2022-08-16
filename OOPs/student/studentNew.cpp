@@ -36,10 +36,18 @@ int main() {
 
 */
 
-    Student s1(10, 1000);
-    cout << "Address of s1 " << &s1 << endl;
+    // Student s1(10, 1000);
+    // cout << "Address of s1 " << &s1 << endl;
 
-    Student s2(100);
+    // Student s2(100);
+    // s2.display();
+
+    Student s1(10, 100); // parameterised constructor (it's user defined)
+    cout << "S1 : ";
+    s1.display();
+
+    Student s2(s1); // copy constructor (builtin)
+    cout << "S2 : ";
     s2.display();
 
     return 0;

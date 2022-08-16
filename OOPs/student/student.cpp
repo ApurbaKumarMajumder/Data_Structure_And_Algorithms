@@ -1,6 +1,15 @@
 #include <iostream>
 using namespace std;
 
+/*
+            Class
+    1. Default constructor
+    2. Copy Constructor
+        -> creates an object which is a copy of other object.
+    3. Copy assignment operator (=)
+    4. Destructor
+*/
+
 class Student
 {
     public:

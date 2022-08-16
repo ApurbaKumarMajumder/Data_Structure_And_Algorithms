@@ -8,6 +8,13 @@ using namespace std;
         -> creates an object which is a copy of other object.
     3. Copy assignment operator (=)
     4. Destructor
+        -> it dealocates mmemmory of the object
+        -> same name as the class name
+        -> No return type
+        -> No input arguments.
+    -> it is also called oncee in lifetime and it is called when the scope of the object is finished.
+    -> there can be many constructor but destructor is only one.
+    -> 
 */
 
 class Student

@@ -66,6 +66,7 @@ int main() {
     Student *s6 = new Student(s1);
 */
 
+/*
     Student s1(10, 100);
     Student s2(20, 200);
 
@@ -79,6 +80,19 @@ int main() {
     // but for dynamic object creation we have to call the destructor
 
     delete s3; // dynamic object
+*/
+  
+    Student s1; // constructor 1 called
 
+    Student s2(100); // constructor 2 called
+
+    Student s3(10, 100); // constructor 3 called
+
+    Student s4(s3); // copy constructor called
+    s1 = s2;    // copy assignment operator called (as objects are already created)
+
+    Student s5 = s3; // copy constructor
+    // Student s5; // default
+    // s5 = s3; // copy operator
     return 0;
 }
